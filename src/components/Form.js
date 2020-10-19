@@ -3,7 +3,8 @@ import React from 'react';
 const Form = ({ setInputText, todos, setTodos, inputText, setStatus}) => {    // or (props) -> props.setInputText
   //Here lies javascript code and function
    const inputTextHandler = (e) =>{
-      setInputText(e.target.value);
+       setInputText(e.target.value);
+
    };
    const submitTodoHandler = (e) => {
       e.preventDefault();
@@ -18,7 +19,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus}) => {    //
    return(
        <form>
        <input value={inputText} type="text" className="todo-input" onChange={inputTextHandler}  />
-       <button  className="todo-button" type="submit" onClick={submitTodoHandler}>
+       <button  className="todo-button" type="submit" onClick={submitTodoHandler} disabled={inputText?"":!""}>
          <i className="fas fa-plus-square"></i>
        </button>
        <div className="select">
